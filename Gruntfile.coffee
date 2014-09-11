@@ -21,6 +21,17 @@ module.exports = (grunt) ->
       coffee:
         files: ['<%= paths.src %>scripts/*.coffee']
         tasks: ['coffee', 'uglify:compile']
+      copyFont:
+        files: ['<%= paths.src %>styles/fonts/*']
+        tasks: ['copy:font']
+      copyStatic:
+        files: [
+          '<%= paths.src %>/**/*'
+          '!<%= paths.src %>/views{,/**/*}'
+          '!<%= paths.src %>/styles{,/**/*}'
+          '!<%= paths.src %>/scripts{,/**/*}'
+        ]
+        tasks: ['copy:static']
 
     jade:
       compile:
