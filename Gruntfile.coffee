@@ -77,6 +77,18 @@ module.exports = (grunt) ->
           src: ['*']
           dest: '<%= paths.dist %>styles/fonts'
         ]
+      static:
+        files: [
+          expand: true
+          cwd: '<%= paths.src %>'
+          src: [
+            '**/*'
+            '!views{,/**/*}'
+            '!styles{,/**/*}'
+            '!scripts{,/**/*}'
+          ]
+          dest: '<%= paths.dist %>'
+        ]
 
     clean:
       tmp: '<%= paths.tmp %>'
