@@ -42,11 +42,11 @@ module.exports = (grunt) ->
       compile:
         options:
           'include css': true
-          paths: ['bower_components/normalize.css']
+          paths: ['bower_components']
           import: [
             'nib'
-            'normalize.css'
             'iconfont.css'
+            'normalize.css/normalize.css'
           ]
         files:
           '<%= paths.dist %>styles/index.css': '<%= paths.src %>styles/index.styl'
